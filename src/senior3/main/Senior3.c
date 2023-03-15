@@ -31,7 +31,14 @@ union Object2 {
 
 };
 
-enum status {low = 1, middle = 2, high = 3};
+enum Status {low = 1, middle = 2, high = 3};
+
+typedef struct test {
+
+    int age;
+    char name[10];
+
+} Student3;
 
 void test1() {
 
@@ -95,10 +102,10 @@ void test4() {
 
 void test5() {
 
-    /*enum status a = low;
+    /*enum Status a = low;
     printf("%d", a);*/
 
-    /*enum status a = high;
+    /*enum Status a = high;
     if (a == low) {
         printf("低档次");
     } else if (a == high) {
@@ -107,13 +114,29 @@ void test5() {
         printf("中档次");
     }*/
 
-    enum status a = high;
+    enum Status a = high;
     switch (a) {
-        case low;
-        case high;
-        case middle;
+        case low:
+        case high:
+        case middle:
         default: ;
     }
+
+}
+
+void test6() {
+
+    /*typedef int lbwnb;
+    lbwnb i = 666;
+    printf("%d", i);*/
+
+    /*typedef const char *String;
+    String str = "Hello World";
+    str = "Fuck World";
+    printf(str);*/
+
+    Student3 s = {18, "小明"};
+    printf("%s", s.name);
 
 }
 
@@ -123,7 +146,8 @@ int main() {
     // test2();
     // test3();
     // test4();
-    test5();
+    //test5();
+    //test6();
 
 }
 

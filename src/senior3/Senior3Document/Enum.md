@@ -42,17 +42,21 @@
                     int main() {
                         enum status a = high;
                         switch (a) {
-                            case low;
-                            case high;
-                            case middle;
+                            case low:
+                            case high:
+                            case middle:
                             default: ;
                         }
                     }
                         
 不过在枚举变量定义时需要注意:
 
-                    enum status {low, middle, high}; // 
+                    enum status {low, middle, high}; // 如果不给初始值的话 那么会从第一个枚举开始 默认值为0 后续依次+1
 
 所以这里的low就是0 middle就是1 high就是2了
 
+如果中途设定呢?
 
+                    enum status {low, middle = 6, high};; // 这里我们给middle设定为6
+
+这时low由于是第一个 所以还是从0开始 不过middle这里指定为6了 所以紧跟着的high初始值就是middle的值+1了 因此low现在是0 middle就是6 high就是7了
