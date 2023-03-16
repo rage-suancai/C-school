@@ -3,6 +3,13 @@
 #include <math.h>
 #include <stdlib.h>
 
+// #define PI 3.1415926
+// #define M a + b
+// #define MUL(x) x * x
+// #define bb(i) printf("我是宏替换的: %d", i);
+// #define bb(str) printf("我是宏替换的: "#str" <");
+#define TEST(n) x ##n
+
 struct Student1;
 struct Object1;
 struct Student2;
@@ -209,6 +216,24 @@ void test7() {
 
 }
 
+void test8() {
+
+    // printf("π的值为: %f", PI);
+
+    /*int a = 10, b = 20;
+    printf("%d", M * a);*/
+
+    // printf("%d", MUL(9));
+
+    // bb(666);
+    
+    // bb("你看这不就替换了吗");
+
+    int TEST(1) = 10;
+    x1 = 20;
+
+}
+
 int main() {
 
     // test1();
@@ -217,7 +242,8 @@ int main() {
     // test4();
     // test5();
     // test6();
-    test7();
+    // test7();
+    test8();
 
 }
 
